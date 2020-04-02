@@ -2,7 +2,6 @@ package com.norha.app.DAO;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -18,7 +17,6 @@ public class ProductDAOImpl implements ProductDAO {
 	private SessionFactory sessionFactory;
 
 	@Override
-	@Transactional
 	public List<Product> getProducts() {
 		
 		/* Getting session object from the Session Factory */

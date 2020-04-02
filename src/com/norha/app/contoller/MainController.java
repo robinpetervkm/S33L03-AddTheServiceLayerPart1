@@ -8,18 +8,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.norha.app.DAO.ProductDAO;
 import com.norha.app.entity.Product;
+import com.norha.app.service.AppService;
 
 @Controller
 public class MainController {
 	
 	@Autowired
-	private ProductDAO productDAO;
+	private AppService appService;
 	
 	@RequestMapping(value = "/",method = RequestMethod.GET)
 	public String homepage(Model model) {
-		List<Product> products = productDAO.getProducts();
+		List<Product> products = appService.getProducts();
 		model.addAttribute("products", products);
 		return "homepage";
 	}
